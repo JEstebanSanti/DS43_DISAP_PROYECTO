@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_graph"
+    app:startDestination="@id/loginFragment">
+
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.assistencias.LoginFragment"
+        android:label="fragment_login"
+        tools:layout="@layout/fragment_login" >
+        <action
+            android:id="@+id/action_loginFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.assistencias.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_createProjectFragment"
+            app:destination="@id/createProjectFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_homeFragment_to_dashBoardProjectFragment"
+            app:destination="@id/dashBoardProjectFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_enter_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/addMembersFragment"
+        android:name="com.example.assistencias.AddMembersFragment"
+        android:label="fragment_add_members"
+        tools:layout="@layout/fragment_add_members" >
+        <action
+            android:id="@+id/action_addMembersFragment_to_dashBoardProjectFragment"
+            app:destination="@id/dashBoardProjectFragment"
+            app:enterAnim="@animator/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/dashBoardProjectFragment"
+        android:name="com.example.assistencias.DashBoardProjectFragment"
+        android:label="fragment_dash_board_project"
+        tools:layout="@layout/fragment_dash_board_project" >
+        <action
+            android:id="@+id/action_dashBoardProjectFragment_to_addMembersFragment"
+            app:destination="@id/addMembersFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_dashBoardProjectFragment_to_checkAttendanceFragment"
+            app:destination="@id/checkAttendanceFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_dashBoardProjectFragment_to_homeFragment"
+            app:destination="@id/homeFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkAttendanceFragment"
+        android:name="com.example.assistencias.CheckAttendanceFragment"
+        android:label="fragment_check_attendance"
+        tools:layout="@layout/fragment_check_attendance" >
+        <action
+            android:id="@+id/action_checkAttendanceFragment_to_dashBoardProjectFragment"
+            app:destination="@id/dashBoardProjectFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@animator/nav_default_exit_anim" />
+    </fragment>
+    <fragment
+        android:id="@+id/createProjectFragment"
+        android:name="com.example.assistencias.CreateProjectFragment"
+        android:label="fragment_create_project"
+        tools:layout="@layout/fragment_create_project" >
+        <action
+            android:id="@+id/action_createProjectFragment_to_homeFragment"
+            app:destination="@id/homeFragment" />
+    </fragment>
+</navigation>
