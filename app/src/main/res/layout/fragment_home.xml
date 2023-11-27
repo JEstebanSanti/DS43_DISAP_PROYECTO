@@ -8,6 +8,7 @@
 
     <LinearLayout
         android:id="@+id/topPanel_menu"
+        android:background="@color/light_blue"
         android:layout_width="match_parent"
         android:layout_height="80dp"
         android:orientation="horizontal"
@@ -21,12 +22,19 @@
             android:layout_width="80dp"
             android:padding="3dp"
             android:layout_height="match_parent"/>
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/recycleViewLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/topPanel_menu"
+        android:orientation="horizontal">
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recycleMembers"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
 
     </LinearLayout>
-    <ImageView
-        android:src="@drawable/nobitchis"
-        android:id="@+id/nochitches"
-        android:layout_width="wrap_content"
-        app:layout_constraintTop_toBottomOf="@+id/topPanel_menu"
-        android:layout_height="wrap_content"/>
+
+
 </androidx.constraintlayout.widget.ConstraintLayout>
