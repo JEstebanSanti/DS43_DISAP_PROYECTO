@@ -6,12 +6,18 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
+import android.widget.EditText
 import android.widget.LinearLayout
+import android.widget.Toast
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assistencias.adapter.MemberAdapter
+import com.google.android.material.bottomsheet.BottomSheetDialog
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
+
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -44,12 +50,28 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val contex = requireContext()
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
+        val fab_btn = rootView.findViewById<FloatingActionButton>(R.id.fab_add_member)
+        fab_btn.setOnClickListener(){
+            val bsdViewAdd = BottomSheetDialog(rootView.context)
+            val parentView: View = layoutInflater.inflate(R.layout.bsd_add_member, null)
+            bsdViewAdd.setContentView(parentView)
+            bsdViewAdd.show()
+            val btnConfirm = parentView.findViewById<Button>(R.id.bsd_btn_confim)
+            val bsdName = parentView.findViewById<EditText>(R.id.bsd_member_name)
+            val bsdLastName = parentView.findViewById<EditText>(R.id.bsd_member_last_name)
+            val bsdPhone = parentView.findViewById<EditText>(R.id.bsd_member_phone)
+            btnConfirm.setOnClickListener() {
+
+            }
+
+        }
         initReciclerView(rootView, contex)
-        val fab = view.findViewById<FloatingActionButton>(R.id.)
         return  rootView
 
     }
-
+    fun saludo(contx: Context){
+        Toast.makeText(contx, "GOAL -!-!- "+requireContext(), Toast.LENGTH_SHORT)
+    }
     fun initReciclerView( rootView: View, contx: Context){
         val recyclerView = rootView.findViewById<RecyclerView>(R.id.recycleMembers)
         recyclerView.layoutManager = LinearLayoutManager(contx)
@@ -76,3 +98,5 @@ class HomeFragment : Fragment() {
             }
     }
 }
+
+
