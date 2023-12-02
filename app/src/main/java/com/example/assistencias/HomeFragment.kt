@@ -11,6 +11,7 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assistencias.adapter.MemberAdapter
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -44,6 +45,7 @@ class HomeFragment : Fragment() {
         val contex = requireContext()
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
         initReciclerView(rootView, contex)
+        val fab = view.findViewById<FloatingActionButton>(R.id.)
         return  rootView
 
     }
