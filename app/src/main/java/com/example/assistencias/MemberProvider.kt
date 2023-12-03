@@ -6,7 +6,7 @@ class MemberProvider {
             Member(
                 "Jorge",
                 "Santillan",
-                "https://pbs.twimg.com/media/F8lyXXAXUAAdKb0?format=jpg&name=large",
+                "https://pbs.twimg.com/media/F5c4CUOWYAAsXcY?format=jpg&name=4096x4096",
                 "123",
             ),
             Member(

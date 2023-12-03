@@ -9,6 +9,7 @@ import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
 import android.widget.Toast
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assistencias.adapter.MemberAdapter
@@ -80,14 +81,16 @@ class HomeFragment : Fragment() {
 
         }
         initReciclerView(rootView, contex)
-        recyclerView.layoutManager = LinearLayoutManager(context)
-        recyclerView.adapter = MemberAdapter(MemberProvider.memberList)
         return  rootView
     }
     fun initReciclerView( rootView: View, contx: Context){
         val recyclerView = rootView.findViewById<RecyclerView>(R.id.recycleMembers)
         recyclerView.layoutManager = LinearLayoutManager(contx)
-        recyclerView.adapter = MemberAdapter(MemberProvider.memberList)
+        recyclerView.adapter = MemberAdapter(MemberProvider.memberList, {member ->  onItemSelected(member)})
+    }
+    fun onItemSelected(member: Int){
+        Toast.makeText(requireContext(), member.toString(), Toast.LENGTH_SHORT).show()
+        findNavController().navigate(HomeFragmentDirections.actionHomeFragmentToMemberView(positionItemList = member))
     }
 }
 

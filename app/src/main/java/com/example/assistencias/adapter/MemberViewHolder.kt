@@ -13,9 +13,14 @@ class MemberViewHolder(view:View):RecyclerView.ViewHolder(view) {
     val memberName = view.findViewById<TextView>(R.id.tvMemberName)
     val memberLastName = view.findViewById<TextView>(R.id.tvMemberLastName)
 
-    fun render(member: Member) {
+    fun render(member: Member, onClickListener: (Int) -> Unit) {
         memberName.text = member.name
         memberLastName.text = member.lastName
         Picasso.get().load(member.photo).into(imgMember)
+
+        itemView.setOnClickListener() {
+            onClickListener(adapterPosition)
+        }
     }
+
 }

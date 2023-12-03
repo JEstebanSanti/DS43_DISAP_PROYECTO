@@ -1,9 +1,16 @@
 <resources>
-    <string name="app_name">Assistencias</string>
+    <string name="app_name">AttendanceAPP</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">holo</string>
     <string name="btn_login">login</string>
     <string name="etx_login_user">username</string>
     <string name="etx_login_password">password</string>
     <string name="logo">logo</string>
+    <string name="bsd_add_title">Add New Member</string>
+    <string name="bsd_add_btn_confirm">Confirm</string>
+    <string name="bsd_add_hint_name">name</string>
+    <string name="bsd_add_hint_last_name">last name</string>
+    <string name="bsd_add_hint_phone_number">phone number</string>
+    <string name="list_member_item_img_desc">Image of the member</string>
+    <string name="frag_view_member_Attendances_Title">Attendance Resume</string>
 </resources>

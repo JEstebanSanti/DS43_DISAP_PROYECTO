@@ -8,53 +8,66 @@
     <TextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:text="Agregar Nuevo"
+        android:text="@string/bsd_add_title"
         android:textStyle="bold"
+        android:textColor="@color/pink"
         android:textSize="24sp"
-        android:layout_marginLeft="10sp"
+        android:layout_marginStart="10sp"
         android:layout_marginVertical="16sp"
         android:layout_marginTop="5sp"/>
     <FrameLayout
         android:layout_width="match_parent"
-        android:layout_height="7dp"
-        android:background="@color/light_pink"/>
+        android:layout_height="4dp"
+        android:background="@color/blue"/>
     <EditText
+        android:inputType="text"
         android:id="@+id/bsd_member_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:minWidth="340dp"
+        android:layout_marginStart="30sp"
         android:layout_height="wrap_content"
-        android:hint="name"
+        android:hint="@string/bsd_add_hint_name"
         android:layout_marginVertical="20dp"
         android:textSize="16sp"
         android:minHeight="60dp"
         android:layout_marginHorizontal="16dp"/>
     <EditText
+        android:inputType="text"
         android:id="@+id/bsd_member_last_name"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:minWidth="340dp"
+        android:layout_marginStart="30sp"
         android:layout_height="wrap_content"
-        android:hint="last name"
+        android:hint="@string/bsd_add_hint_last_name"
         android:layout_marginVertical="15dp"
         android:textSize="16sp"
         android:minHeight="60dp"
         android:layout_marginHorizontal="16dp"/>
     <EditText
         android:id="@+id/bsd_member_phone"
-        android:layout_width="match_parent"
+        android:layout_width="wrap_content"
+        android:minWidth="340dp"
+        android:layout_marginStart="30sp"
         android:layout_height="wrap_content"
-        android:inputType="numberSigned"
-        android:hint="phone number"
+        android:inputType="phone"
+        android:hint="@string/bsd_add_hint_phone_number"
         android:layout_marginVertical="15dp"
         android:textSize="16sp"
         android:minHeight="60dp"
         android:layout_marginHorizontal="16dp"/>
     <Button
         android:id="@+id/bsd_btn_confim"
-        android:layout_width="360dp"
-        android:layout_marginStart="30dp"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        tools:text="confirm"
+        android:padding="15sp"
+        android:textColor="@color/black"
+        android:layout_marginStart="79sp"
+        android:layout_marginVertical="26sp"
+        android:text="@string/bsd_add_btn_confirm"
         android:textSize="20sp"
-        android:minHeight="63dp"
-        android:backgroundTint="@color/light_blue"
+        android:textStyle="bold"
+        android:minHeight="69dp"
+        android:backgroundTint="@color/blue"
         />
 
 
