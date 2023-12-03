@@ -8,14 +8,11 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Button
 import android.widget.EditText
-import android.widget.LinearLayout
 import android.widget.Toast
-import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.assistencias.adapter.MemberAdapter
 import com.google.android.material.bottomsheet.BottomSheetDialog
-import com.google.android.material.bottomsheet.BottomSheetDialogFragment
 import com.google.android.material.floatingactionbutton.FloatingActionButton
 
 
@@ -50,7 +47,9 @@ class HomeFragment : Fragment() {
         // Inflate the layout for this fragment
         val contex = requireContext()
         val rootView = inflater.inflate(R.layout.fragment_home, container, false)
+        val recyclerView = rootView.findViewById<RecyclerView>(R.id.recycleMembers)
         val fab_btn = rootView.findViewById<FloatingActionButton>(R.id.fab_add_member)
+
         fab_btn.setOnClickListener(){
             val bsdViewAdd = BottomSheetDialog(rootView.context)
             val parentView: View = layoutInflater.inflate(R.layout.bsd_add_member, null)
@@ -61,41 +60,34 @@ class HomeFragment : Fragment() {
             val bsdLastName = parentView.findViewById<EditText>(R.id.bsd_member_last_name)
             val bsdPhone = parentView.findViewById<EditText>(R.id.bsd_member_phone)
             btnConfirm.setOnClickListener() {
+                if(!bsdName.text.isNullOrEmpty() && !bsdLastName.text.isNullOrEmpty() && !bsdPhone.text.isNullOrEmpty()) {
+                    MemberProvider.memberList.add(
+                        Member(
+                            bsdName.text.toString(),
+                            bsdLastName.text.toString(),
+                            "https://i.pinimg.com/originals/15/d2/f6/15d2f6892bc5039491ffd747e66dd833.jpg",
+                            bsdPhone.toString(),
+                        )
+                    )
+                    recyclerView.adapter?.notifyItemRangeChanged(0, MemberProvider.memberList.size)
+
+                    bsdViewAdd.dismiss()
+                }else {
+                    Toast.makeText(requireContext(), "Te faltan Campos", Toast.LENGTH_SHORT).show()
+                }
 
             }
 
         }
         initReciclerView(rootView, contex)
+        recyclerView.layoutManager = LinearLayoutManager(context)
+        recyclerView.adapter = MemberAdapter(MemberProvider.memberList)
         return  rootView
-
-    }
-    fun saludo(contx: Context){
-        Toast.makeText(contx, "GOAL -!-!- "+requireContext(), Toast.LENGTH_SHORT)
     }
     fun initReciclerView( rootView: View, contx: Context){
         val recyclerView = rootView.findViewById<RecyclerView>(R.id.recycleMembers)
         recyclerView.layoutManager = LinearLayoutManager(contx)
         recyclerView.adapter = MemberAdapter(MemberProvider.memberList)
-
-    }
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment HomeFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            HomeFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
-                }
-            }
     }
 }
 
