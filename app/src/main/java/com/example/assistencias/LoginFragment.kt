@@ -1,5 +1,6 @@
 package com.example.assistencias
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -24,7 +25,10 @@ class LoginFragment : Fragment() {
 
         btnLogin.setOnClickListener(){
             if(!etx_user.text.isNullOrEmpty() && !etx_password.text.isNullOrEmpty()) {
-                findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
+                val i = Intent(root.context,MainActivity::class.java)
+                startActivity(i)
+                activity?.finish()
+                //findNavController().navigate(R.id.action_loginFragment_to_homeFragment)
             }
         }
 
