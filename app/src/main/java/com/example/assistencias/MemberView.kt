@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import androidx.navigation.fragment.navArgs
 import com.squareup.picasso.Picasso
 
@@ -20,6 +22,10 @@ class MemberView : Fragment() {
         val imageMember = view.findViewById<ImageView>(R.id.Iv_view_member)
         val nameMember = view.findViewById<TextView>(R.id.Tv_view_member)
         nameMember.text = member.name
+        val btnAttendance = view.findViewById<Button>(R.id.btn_view_attendance)
+        btnAttendance.setOnClickListener(){
+            Toast.makeText(context, "Today "+nameMember.text+" Assisted Corretly", Toast.LENGTH_LONG).show()
+        }
         Picasso.get().load(member.photo).into(imageMember)
     }
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -32,8 +38,8 @@ class MemberView : Fragment() {
     ): View? {
         // Inflate the layout for this fragment
         val rootView = inflater.inflate(R.layout.fragment_member_view, container, false)
-        val imageMember = rootView.findViewById<ImageView>(R.id.Iv_view_member)
-        val nameMember = rootView.findViewById<TextView>(R.id.Tv_view_member)
+
+
         return  rootView
     }
 }
