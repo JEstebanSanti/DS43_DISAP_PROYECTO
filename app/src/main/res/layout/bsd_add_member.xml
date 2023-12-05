@@ -55,6 +55,18 @@
         android:textSize="16sp"
         android:minHeight="60dp"
         android:layout_marginHorizontal="16dp"/>
+    <EditText
+        android:id="@+id/bsd_member_img_url"
+        android:layout_width="wrap_content"
+        android:minWidth="340dp"
+        android:layout_marginStart="30sp"
+        android:layout_height="wrap_content"
+        android:inputType="textUri"
+        android:hint="@string/bsd_add_hint_url"
+        android:layout_marginVertical="15dp"
+        android:textSize="16sp"
+        android:minHeight="60dp"
+        android:layout_marginHorizontal="16dp"/>
     <Button
         android:id="@+id/bsd_btn_confim"
         android:layout_width="250dp"

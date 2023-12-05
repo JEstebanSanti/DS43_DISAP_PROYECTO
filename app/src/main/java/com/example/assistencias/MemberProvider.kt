@@ -51,6 +51,30 @@ class MemberProvider {
                 "123",
 
             ),
+            Member(
+                "Cago",
+                "Cago",
+                "https://i.pinimg.com/originals/19/5e/4e/195e4e0f6abb0c227b412f423e93856c.jpg",
+                "123"
+            ),
+            Member(
+                "Estriper",
+                "Estriper",
+                "https://i.pinimg.com/originals/47/96/6a/47966a0e3f53d63e8faad42eed5a132b.jpg",
+                "123"
+            ),
+            Member(
+                "Kawasaki",
+                "Kawasaki",
+                "https://i.pinimg.com/originals/70/a5/96/70a59678d1406f441bc5d77ea55596e9.jpg",
+                "1234"
+            ),
+            Member(
+                "Kriko",
+                "Kriko",
+                "https://i.pinimg.com/originals/15/81/88/158188d867f0e108399ad65577e71481.jpg",
+                "12334",
+            ),
         )
     }
 }

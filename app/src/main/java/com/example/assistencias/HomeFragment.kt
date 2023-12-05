@@ -60,13 +60,14 @@ class HomeFragment : Fragment() {
             val bsdName = parentView.findViewById<EditText>(R.id.bsd_member_name)
             val bsdLastName = parentView.findViewById<EditText>(R.id.bsd_member_last_name)
             val bsdPhone = parentView.findViewById<EditText>(R.id.bsd_member_phone)
+            val bsdImgUrl = parentView.findViewById<EditText>(R.id.bsd_member_img_url)
             btnConfirm.setOnClickListener() {
                 if(!bsdName.text.isNullOrEmpty() && !bsdLastName.text.isNullOrEmpty() && !bsdPhone.text.isNullOrEmpty()) {
                     MemberProvider.memberList.add(
                         Member(
                             bsdName.text.toString(),
                             bsdLastName.text.toString(),
-                            "https://i.pinimg.com/originals/15/d2/f6/15d2f6892bc5039491ffd747e66dd833.jpg",
+                            bsdImgUrl.text.toString(),
                             bsdPhone.toString(),
                         )
                     )
